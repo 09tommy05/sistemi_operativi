@@ -8,7 +8,3 @@ ls -l /etc 1>./260319_tutorato/bash/etc_contents.txt 2>./260319_tutorato/bash/er
 
 #nella soluzione usa cat così wc non ritorna anche il nome del file vabbe 
 find /etc -name "*.conf" 1>found.txt 2>denied.txt; wc -l found.txt
-
-#es3
-#Legga nomi da input.txt Per ogni nome, cerchi file corrispondenti con find in / Salvi risultati in results.txt ed errori in errors.txt Rediriga sia stdout che stderr su complete.log
-cat input.txt | find / 1>results.txt 2>errors.txt
