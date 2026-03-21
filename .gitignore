@@ -2,5 +2,6 @@
 !*/
 !*.* 
 !Dockerfile
+!Makefile
 *.exe
 *.o
