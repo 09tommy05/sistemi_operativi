@@ -20,3 +20,8 @@ debug: $(DEBUG_OBJ)
 	$(CC) $(CFLAGS) $(DEBUG) $^ -o analyzer
 clean:
 	rm -f $(OBJ) $(DEBUG_OBJ) analyzer
+
+docker-build:
+	docker build -t analyzer .
+docker-run: docker-build
+	docker run analyzer
