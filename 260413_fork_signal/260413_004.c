@@ -7,13 +7,12 @@ esecuzione. Il watchdog deve:
 - resettare un timer interno ad ogni notifica ricevuta
 - terminare il processo principale se non riceve notifiche entro un intervallo di tempo prefissato
 */
-
+#define _POSIX_C_SOURCE 199309L
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <signal.h>
 #include <time.h>
-
 int timer = 6;
 
 void handler(int sig, siginfo_t *info, void *context)

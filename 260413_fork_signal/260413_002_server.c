@@ -6,6 +6,7 @@ inviato la richiesta.
 - Il secondo programma deve comportarsi come un client, che invia una singola richiesta al
 server specificando il PID del destinatario.
 */
+#define _POSIX_C_SOURCE 199309L
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>

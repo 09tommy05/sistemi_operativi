@@ -6,6 +6,7 @@ notifica esterna per terminare. Il processo padre deve:
 - inviare al figlio un segnale che ne autorizza la terminazione
 Il figlio, alla ricezione della notifica, deve terminare la propria esecuzione.
 */
+#define _POSIX_C_SOURCE 199309L
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
