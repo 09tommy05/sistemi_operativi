@@ -3,9 +3,19 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/wait.h>
+#include <signal.h>
 
 #define READ 0
 #define WRITE 1
+
+volatile int pid = 0;
+volatile int isExpired = 0;
+
+void handler(int sig)
+{
+    isExpired = 1;
+    kill(pid, SIGTERM);
+}
 
 int main()
 {
@@ -39,19 +49,27 @@ int main()
     }
     else
     {
+        pid=f;
+        signal(SIGALRM, handler);
         close(p[WRITE]);
         char buf[32];
         int bytes;
+        alarm(5);
         while ((bytes = read(p[READ], buf, sizeof(buf) - 1)) > 0)
         {
-            buf[bytes] = '\0'; // terminatore stringa
+            alarm(5); // reset timer
+            buf[bytes] = '\0';
             int n = atoi(buf);
             s += n;
             printf("Somma parziale: %d\n", s);
         }
+        alarm(0); // disattivo timer.
+        if (isExpired)
+            printf("[TIMEOUT] Somma parziale: %d\n", s);
+        else
+            printf("Somma totale: %d\n", s);
         wait(NULL);
         close(p[READ]);
     }
-    printf("Somma totale: %d\n", s);
     return 0;
 }
