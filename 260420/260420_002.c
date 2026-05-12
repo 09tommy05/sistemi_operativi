@@ -84,7 +84,7 @@ int main()
             sa_usr.sa_flags = 0;
             sigemptyset(&sa_usr.sa_mask);
             sigaction(SIGUSR1, &sa_usr, NULL);
-            sleep(i * 10s);
+            sleep(i * 10);
             printf("Figlio %d terminato\n", i);
             return i;
         }

@@ -1,0 +1,18 @@
+[THREAD 1] Operation 0 (square): START - input: 16.000000
+[THREAD 1] Operation 0 (square): END - result: 256.000000
+[THREAD 1] Operation 1 (sqrt): START - input: 16.000000
+[THREAD 1] Operation 1 (sqrt): END - result: 4.000000
+[THREAD 1] Operation 2 (times PI): START - input: 16.000000
+[THREAD 1] Operation 2 (times PI): END - result: 50.265482
+[THREAD 2] Operation 0 (square): START - input: 76.000000
+[THREAD 2] Operation 0 (square): END - result: 5776.000000
+[THREAD 2] Operation 1 (sqrt): START - input: 76.000000
+[THREAD 2] Operation 1 (sqrt): END - result: 8.717798
+[THREAD 2] Operation 2 (times PI): START - input: 76.000000
+[THREAD 2] Operation 2 (times PI): END - result: 238.761042
+[THREAD 3] Operation 0 (square): START - input: 80.000000
+[THREAD 3] Operation 0 (square): END - result: 6400.000000
+[THREAD 3] Operation 1 (sqrt): START - input: 80.000000
+[THREAD 3] Operation 1 (sqrt): END - result: 8.944272
+[THREAD 3] Operation 2 (times PI): START - input: 80.000000
+[THREAD 3] Operation 2 (times PI): END - result: 251.327412
